@@ -19,9 +19,27 @@ class Car:
             print("You can't roll back an odometer!")
 
 
+class ElectricCar(Car):
+
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+        self.battery = Battery(100)
+
+
+class Battery:
+    def __init__(self, battery_size):
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        print('This car has a ' + str(self.battery_size) + ' kWh battery.')
+
+
 my_new_car = Car('skoda', 'citigo', '2016')
 print(my_new_car.get_descriptive_name())
 my_new_car.read_odometer()
 my_new_car.update_odometer(18700)
 my_new_car.read_odometer()
 my_new_car.update_odometer(0)
+my_tesla = ElectricCar('tesla', 'model 3', 2018)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()

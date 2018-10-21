@@ -18,6 +18,16 @@ class Restaurant:
         self.number_served += number_served
 
 
+class IceCreamStand(Restaurant):
+
+    def __init__(self, name, cuisine):
+        super(IceCreamStand, self).__init__(name, cuisine)
+        self.flavors = ['vanilla', 'chocolate']
+
+    def display_flavors(self):
+        print(self.flavors)
+
+
 mykonos = Restaurant('mykonos', 'greek')
 dolce_vita = Restaurant('dolce vita', 'italian')
 fat_bob = Restaurant('fat bob', 'american')
@@ -35,3 +45,6 @@ mykonos.set_numbers_server(2)
 print(mykonos.number_served)
 mykonos.increment_number_served(1)
 print(mykonos.number_served)
+kolorowa = IceCreamStand('kolorowa', 'ice creams')
+
+kolorowa.display_flavors()

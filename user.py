@@ -18,6 +18,15 @@ class User:
         self.login_attempts = 0
 
 
+class Admin(User):
+
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
+        self.privileges = ['can add posts', 'can delete posts', 'can ban posts']
+
+    def show_p
+
+
 john_smith = User('john', 'smith')
 jane_doe = User('jane', 'doe')
 
